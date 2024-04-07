@@ -23,7 +23,7 @@ class DcBusInterface(ServiceInterface):
         super().__init__('com.satou.dcbus')
 
     @method()
-    async def Hello(self, id: 's', message: 's'):
+    async def Send(self, id: 's', message: 's'):
         user = await fetch_user(id)
         if message.endswith(".jpg") or message.endswith(".png"):
             await user.send(file=discord.File(message))

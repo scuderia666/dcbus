@@ -22,7 +22,7 @@ async def client(msg):
 
     interface = proxy_object.get_interface('com.satou.dcbus')
 
-    await interface.call_hello(id, content[1])
+    await interface.call_send(id, content[1])
 
 def main(exe, args):
     if args:
