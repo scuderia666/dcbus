@@ -24,7 +24,7 @@ async def fetch_user(id):
 async def on_message(message):
     if message.author.id == client.user.id:
         return
-        
+
     sender = message.author
 
     if message.channel.type is discord.ChannelType.private:
@@ -38,7 +38,7 @@ class DcBusInterface(ServiceInterface):
     @method()
     async def Send(self, id: 's', message: 's'):
         user = await fetch_user(id)
-        if message.endswith(".jpg") or message.endswith(".png") or message.endswith(".zip"):
+        if message.endswith(".jpg") or message.endswith(".png") or message.endswith(".zip") or message.endswith(".log"):
             await user.send(file=discord.File(message))
         else:
             await user.send(message)
